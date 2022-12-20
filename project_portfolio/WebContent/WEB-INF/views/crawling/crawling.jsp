@@ -47,6 +47,7 @@
 	<main class="container">		
 		<h3>웹크롤링 - 구직사이트</h3>
 		<p>특정 구직사이트에서 지역, 분야를 가져오자</p>
+		<button type="button">크롤링</button>
 		<table class="table">
 			<thead>
 				<tr>

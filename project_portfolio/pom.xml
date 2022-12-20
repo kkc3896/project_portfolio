@@ -45,6 +45,7 @@
 		<commons-fileupload-version>1.4</commons-fileupload-version>
 		<commons-io-version>2.11.0</commons-io-version>
 		<jackson-databind-version>2.14.1</jackson-databind-version>
+		<jsoup-version>1.15.3</jsoup-version>
 		
 	</properties>
 
@@ -218,6 +219,14 @@
 		    <version>${jackson-databind-version}</version>
 		</dependency>
 				
+		<!-- 웹 크롤링 -->
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>${jsoup-version}</version>
+		</dependency>
+		
 		
 	</dependencies>
 </project>
