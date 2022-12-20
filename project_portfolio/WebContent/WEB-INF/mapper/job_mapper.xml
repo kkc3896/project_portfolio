@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+						
+<mapper namespace="project_portfolio">
+	<!-- 목록_list -->
+	<!-- 
+	<select id="Job_List" resultType="com.test.been.JobBeen">
+		select
+			job_idx, 
+			job_name, 
+			job_content, 
+			job_place, 
+			job_field, 
+			job_date,
+			job_count
+		from
+			job
+		order by job_idx desc
+	</select>
+	 -->
+	<!-- 목록_list - 페이징,검색 추가 -->
+	<select id="Job_List" resultType="com.test.been.JobBeen">
+		select
+			job_idx, 
+			job_name, 
+			job_content, 
+			job_place, 
+			job_field, 
+			job_date,
+			job_count,
+			fileName
+		from
+			job
+		<where>
+            <if test="searchType=='job_name' and keyword != null and keyword !=''">
+                AND job_name like CONCAT('%',#{keyword},'%')
+            </if>
+            <if test="searchType=='job_place' and keyword != null and keyword !=''">
+                AND job_place like CONCAT('%',#{keyword},'%')
+            </if>
+        </where>
+		order 
+			by job_idx desc
+		LIMIT #{startList}, #{listSize}
+	</select>
+	
+	<!-- 입력_write -->
+	<!-- sysdate()는 db쪽에서 설정시 datetime해서 사용한것이고 timestamp를 사용한다면 job_date 그대로 사용해도 된다. -->
+	<insert id ="Job_Write" parameterType ="com.test.been.JobBeen">
+		<!-- 아래의 selectKey는 글번호를 Auto_increment으로 자동으로 올라가게 하기 위함이다 -->
+		<selectKey keyProperty='job_idx' order="BEFORE" 
+	               resultType="java.lang.Integer">
+			SELECT Auto_increment 
+			FROM information_schema.tables 
+			WHERE table_name='job'
+		</selectKey>
+		
+		insert into job
+			(job_idx, 
+			job_name, 
+			job_content, 
+			job_place, 
+			job_field, 
+			job_date,
+			fileName)
+		values
+			(#{job_idx}, #{job_name}, #{job_content}, #{job_place}, #{job_field}, sysdate(), #{fileName})	
+	</insert>
+	
+	<!-- 글읽기_read -->
+	<select id="Job_Read" resultType="com.test.been.JobBeen">
+		select
+			job_idx,
+			job_name,
+			job_content,
+			job_place,
+			job_field,
+			job_date,
+			job_count,
+			fileName
+		from
+			job
+		where 
+			job_idx = #{job_idx}
+	</select>
+	
+	<!-- 글수정_update -->
+	<update id="Job_Update" parameterType="com.test.been.JobBeen">
+		update
+			job
+		set
+			job_name = #{job_name},
+			job_content = #{job_content},
+			job_place = #{job_place},
+			job_field = #{job_field},
+			fileName = #{fileName}
+		where
+			job_idx = #{job_idx}
+	</update>
+	
+	<!-- 삭제_delete -->
+	<delete id="Job_Delete" parameterType="com.test.been.JobBeen">
+		delete from job
+		where job_idx = #{job_idx}
+	</delete>
+	
+	<!-- 조회수_count -->
+	<update id = "Job_Count" parameterType = "com.test.been.JobBeen">
+		update job
+		set job_count = job_count + 1
+		where job_idx = #{job_idx}
+	</update>
+	
+	<!-- 페이지네이션 -->
+	<!-- 게시글 갯수 -->
+    <select id="getBoardListCnt" resultType="Integer">
+        SELECT count(*) as job_idx
+        FROM job
+        <where>
+            <if test="keyword != null and keyword != ''">
+                <if test="searchType=='job_name'">
+                    AND job_name like CONCAT('%',#{keyword},'%')
+                </if>
+                <if test="searchType=='job_place'">
+                    AND job_place like CONCAT('%',#{keyword},'%')
+                </if>
+            </if>
+        </where>
+    </select>
+</mapper>						

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project_portfolio_coment">
+<!-- 
+	coment_bno
+	coment_content
+	coment_user
+	coment_date
+	coment_update
+ -->
+	<!-- 댓글 조회 -->
+	<select id="comentList" resultType="com.test.been.ComentBean">
+		select
+			coment_bno, coment_content, coment_user, coment_date, remote_addr
+		from 
+			coment
+		order by
+			coment_bno desc
+	</select>
+
+	<!-- 댓글 작성 -->
+	<insert id="comentWrite" parameterType="com.test.been.ComentBean">
+		<!-- 아래의 selectKey는 글번호를 Auto_increment으로 자동으로 올라가게 하기 위함이다 -->
+		<selectKey keyProperty='coment_bno' order="BEFORE" 
+	               resultType="java.lang.Integer">
+			SELECT Auto_increment 
+			FROM information_schema.tables 
+			WHERE table_name='coment'
+		</selectKey>
+		insert into 
+			coment
+				(
+				 coment_bno,
+				 coment_content, 
+				 coment_user, 
+				 coment_date,
+				 remote_addr
+				)
+		value
+			(
+			 #{coment_bno}, 
+			 #{coment_content}, 
+			 #{coment_user}, 
+			 sysdate(),
+			 #{remote_addr}
+			)
+	</insert>
+
+	<!-- 댓글 수정 -->
+	<update id="comenUpdate"
+		parameterType="com.test.been.ComentBean">
+		update
+			coment 
+		set
+			coment_content = #{coment_content},
+			coment_user = #{coment_user}
+		where
+			coment_bno = #{coment_bno}
+	</update>
+
+	<!-- 댓글 삭제 -->
+	<delete id="comenDelete"
+		parameterType="com.test.been.ComentBean">
+		delete from 
+			coment
+		where
+			coment_bno = #{coment_bno}
+	</delete>
+</mapper>						

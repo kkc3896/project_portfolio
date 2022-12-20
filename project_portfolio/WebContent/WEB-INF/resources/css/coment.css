@@ -1,0 +1,6 @@
+/*
+	말풍선 모양 css
+*/
+.coment_list {position:relative; margin: 50px; padding: 20px; width:200px; height:60px; color: #FFF; border-radius: 10px; background-color: #000;}
+
+.coment_list:after {content:""; position: absolute; top: 21px; left: -30px; border-right: 30px solid #000; border-top: 10px solid transparent; border-bottom: 10px solid transparent;}
