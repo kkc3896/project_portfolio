@@ -135,7 +135,7 @@
 						<a href="${path }" class="nav-link px-2 text-white">공공api</a>
 					</li>
 					<li>
-						<c:url var="path" value="crawling" /> 
+						<c:url var="path" value="crawling_view" /> 
 						<a href="${path }" class="nav-link px-2 text-white">크롤링_미구현</a>
 					</li>
 					<li>

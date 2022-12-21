@@ -48,11 +48,11 @@ public class MainController {
 		return "chart/chart";
 	}
 	
-	@GetMapping(value = "crawling")
-	public String crawling(String url) {
-		System.out.println("crawling.jsp실행");
-		
-		return "crawling/crawling";
-	}
+//	@GetMapping(value = "crawling")
+//	public String crawling(String url) {
+//		System.out.println("crawling.jsp실행");
+//		
+//		return "crawling/crawling";
+//	}
 	
 }
