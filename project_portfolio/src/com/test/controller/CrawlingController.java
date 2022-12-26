@@ -1,11 +1,10 @@
 package com.test.controller;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Iterator;
-
-import javax.servlet.jsp.PageContext;
+import java.sql.PreparedStatement;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -30,35 +29,64 @@ public class CrawlingController {
 		
 		return "crawling/crawling";
 	}
-
+	/*
 	// 크롤링 기능처리
 	@GetMapping(value = "crawling")
-	public String Crawling(Model model) throws IOException {
-		String name = "아이유";
-		String url = "https://www.genie.co.kr/search/searchMv?query=" + name;// 크롤링할 url
+	public void Crawling(Model model) throws IOException {
+		// 음원차트 지니 실시간 차트 받아오기
+		// 크롤링할 url
+		String url = "https://www.genie.co.kr/";
 		Document doc = null;
-
+		
 		try {
-			doc = Jsoup.connect(url).get(); // Document에는 페이지의 전체 소스가 저장된다
+			// Document에는 페이지의 전체 소스가 저장된다
+			doc = Jsoup.connect(url).get(); 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
 		// select를 이용하여 원하는 태그를 선택한다.
-		Elements element = doc.select("tr.list"); // MV 리스트가 있는 태그
-		String defaulturl = "https://www.genie.co.kr/detail/mediaInfo?xvnm=";
-
+		//Elements element = doc.select("td.info"); 	// 실시간차트 제목 : 가져올수 있다. 순위 : 못 가져온다.
+		Elements element = doc.select("tr.list"); 		// 실시간차트  제목 : 가져올수 있다. 순위 : 가져올수 있다.
+		
+		System.out.println("실시간 차트 1 ~ 10 순위 나열");
 		for (Element element1 : element) {
-			System.out.println("제목 : " + element1.select("td a").attr("title")); // 제목 크롤링
-			System.out.println("url : " + defaulturl + element1.attr("mvid")); // url id 크롤링
-			System.out.println("썸네일 : " + element1.select("td a img").attr("src") + "\n"); // 썸네일 크롤링
+			System.out.print(element1.select("td.number").text() + "\t");	// 순위
+			System.out.println(element1.select("a.title.ellipsis").text() + "\n"); // 제목
+		}
+	}
+	*/
+	// 크롤링 기능처리
+	@GetMapping(value = "crawling")
+	public void Crawling() throws IOException {
+		// 음원차트 지니 실시간 차트 받아오기
+		// 크롤링할 url
+		String url = "https://www.genie.co.kr/";
+		Document doc = null;
+		
+		try {
+			// Document에는 페이지의 전체 소스가 저장된다
+			doc = Jsoup.connect(url).get(); 
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
-		model.addAttribute("element_title", element.select("td a").attr("title"));
-		model.addAttribute("element_mvid", defaulturl + element.attr("mvid"));
-		model.addAttribute("element_img", element.select("td a img").attr("src"));
+		// select를 이용하여 원하는 태그를 선택한다.
+		Elements element = doc.select("tr.list"); 		// 실시간차트  제목 : 가져올수 있다. 순위 : 가져올수 있다.
 		
-		return "redirect:crawling_view";
-	}
+		System.out.println("실시간 차트 1 ~ 10 순위 나열");
+		for (Element element1 : element) {
+			
+			String c_title = element1.select("td.number").text();
+			String c_ranking = element1.select("td.number").text();
+					
+			System.out.print(element1.select("td.number").text() + "\t");	// 순위
+			System.out.println(element1.select("a.title.ellipsis").text() + "\n"); // 제목
+			
+		}
+		
 
+	}
+	
+	
 }
