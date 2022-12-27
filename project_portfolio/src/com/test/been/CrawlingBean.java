@@ -1,10 +1,13 @@
 package com.test.been;
 
 public class CrawlingBean {
-	int c_index; 
-	String c_title; 
-	String c_ranking; 
-	String c_date ;
+	private int c_index;
+	private String c_title; 
+	private String c_ranking; 
+	private String c_date ;
+	private String c_img;
+	
+	
 	
 	public int getC_index() {
 		return c_index;
@@ -29,6 +32,12 @@ public class CrawlingBean {
 	}
 	public void setC_date(String c_date) {
 		this.c_date = c_date;
+	}
+	public String getC_img() {
+		return c_img;
+	}
+	public void setC_img(String c_img) {
+		this.c_img = c_img;
 	}
 	
 	

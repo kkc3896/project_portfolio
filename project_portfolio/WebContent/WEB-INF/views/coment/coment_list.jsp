@@ -19,8 +19,7 @@
 		<ul class="coment_list" style="list-style: none; width: 200px; height: auto;">
 			<li>${comentList.coment_user}</li>
 			<li>${comentList.remote_addr}</li>
-			<!-- \n입력하면 엔터가 되는데 특수문자나 영문자는 뭔가 이상함 -->
-			<!-- 한글은 내용이 전부보이는데 뭔가 이상함 -->
+			<!-- \n입력하면 엔터가 되는데 특수문자나 영문자는 줄바꿈이 안됨 문자 적당히 입력하고 스페이스바(공백) 입력해야 줄바꿈됨 -->
 			<li>${fn:replace(comentList.coment_content, replaceChar, "<br/>")}</li>
 			<!-- parseDate로 데이터를 불러와서 formatDate로 내가 원하는 형태로 바꿔서 보이게 해준다. -->
 			<li>

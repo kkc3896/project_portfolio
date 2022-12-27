@@ -39,29 +39,40 @@
 	<main>
 		<div class="album py-5 bg-light">
 			<div class="container">
-				<!-- 크롤링 form -->
-				<c:url var="path" value="Crawling_Write"/>
-				<form action="${path }" method="post">
-					<button type="submit" class="btn btn-outline-dark me-2">지니 실시간 차트 순위 가져오기</button>
-				</form>
-				
-				<strong>지니 실시간 차트 순위 1 ~ 10</strong>
-				<c:forEach items="${crawling_List}" var="crawlingList" begin="0" step="1" end="9">
-						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-							<div class="col">
-								<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-									<!-- <title>실시간 차트 순위</title> -->
-									<rect width="100%" height="100%" fill="#55595c" />
-									<text x="50%" y="45%" fill="#eceeef" dy=".3em">순위 : ${crawlingList.c_ranking}</text>
-									<text x="50%" y="55%" fill="#eceeef" dy=".3em">제목 : ${crawlingList.c_title}</text>
-									<c:out value="${crawlingList.c_img}"/>
-									<img src="<c:out value="${crawlingList.c_img}"/>" alt="크롤링한 이미지 크롤링한 사이트에서 이미지 변동시 안나올 수 있음">	
-									<img src="<c:url value="${crawlingList.c_img}"/>" alt="크롤링한 이미지 크롤링한 사이트에서 이미지 변동시 안나올 수 있음"/>
-								</svg>
-								
+				<!-- 
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+					<div class="col">
+						<div class="card shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+							<title>Placeholder</title>
+							<rect width="100%" height="100%" fill="#55595c" />
+							<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+									</div>
+									<small class="text-muted">9 mins</small>
+								</div>
 							</div>
 						</div>
-				</c:forEach>
+					</div>
+				</div>
+				 -->
+				<strong>지니 실시간 차트 순위 1 ~ 10</strong>
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+						<div class="col">
+							<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+								<!-- <title>실시간 차트 순위</title> -->
+								<rect width="100%" height="100%" fill="#55595c" />
+								<text x="50%" y="45%" fill="#eceeef" dy=".3em">순위 : ${crawlingBean.c_ranking}</text>
+								<text x="50%" y="55%" fill="#eceeef" dy=".3em">제목 : ${crawlingBean.c_title}</text>
+							</svg>
+						</div>
+					</div>
 			</div>
 		</div>
 	</main>

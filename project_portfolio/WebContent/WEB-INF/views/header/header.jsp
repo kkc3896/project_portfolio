@@ -135,8 +135,13 @@
 						<a href="${path }" class="nav-link px-2 text-white">공공api</a>
 					</li>
 					<li>
+						<c:url var="path" value="Crawling_Write"/>
+						<form method="post" action="${path}">
+							<input type="hidden" value="c_index">						
+						
 						<c:url var="path" value="crawling_view" /> 
 						<a href="${path }" class="nav-link px-2 text-white">크롤링_미구현</a>
+						</form>
 					</li>
 					<li>
 						<c:url var="path" value="ComentList"/>
