@@ -1,7 +1,7 @@
 # project_portfolio 
-실제 호스팅서버 이용중인 url = http://kkc38966.cafe24.com/project_portfolio/
-로그인 필요시 아래를 참고
-아이디 : aaaa  /   비밀번호 : 1234
+실제 호스팅서버 이용중인 url = http://kkc38966.cafe24.com/project_portfolio/  
+로그인 필요시 아래를 참고  
+아이디 : aaaa  /   비밀번호 : 1234  
 12월 28일 크롤링 개발중.. 원하는 정보(실시간 차트 순위)는 db에 저장완료
 화면에 불러오는 작업 중에 랭크(1위,2위...), 노래 제목은 정상적으로 불러와지는데 썸네일이 안보임
 
