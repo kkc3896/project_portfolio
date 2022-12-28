@@ -21,24 +21,23 @@
 	    <input type="hidden" class="form-control" name="job_idx" value='${Job_Update.job_idx}' readonly="readonly"/>
 	  </div>
 	  <div class="form-group">
-	    <label for="job_name">회사명</label>
+	    <label for="job_name">제목</label>
 	    <!-- 한글,숫자,영문만 입력가능 공백x 특수문자x       -->
 	    <input type="text" class="form-control" name="job_name" value='${Job_Update.job_name }' title="한글,숫자,영문자를 이용한 완성된 문자로 입력해주세요. 공백은 입력이 불가능합니다." pattern="^[가-힣a-zA-Z0-9]*$" required="required">
 	  </div>
 	   <div class="form-group">
-	    <label for="job_content">내용</label>
+	    <label for="job_content">내용1</label>
 	    <input type="text" class="form-control" name="job_content" value='${Job_Update.job_content }'>
 	  </div>
 	   <div class="form-group">
-	    <label for="job_place">회사위치</label>
+	    <label for="job_place">내용2</label>
 	    <input type="text" class="form-control" name="job_place" value='${Job_Update.job_place }'>
 	  </div>
 	   <div class="form-group">
-	    <label for="job_field">지원분야</label>
+	    <label for="job_field">내용3</label>
 	    <input type="text" class="form-control" name="job_field" value='${Job_Update.job_field }'>
 	  </div>
 	   <div class="form-group">
-	    <label for="job_date">지원날짜</label>
 	    <input type="hidden" class="form-control" name="job_date" value='${Job_Update.job_date }' readonly="readonly">
 	  </div>
 	   <div class="form-group">

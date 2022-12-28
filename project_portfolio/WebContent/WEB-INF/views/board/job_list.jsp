@@ -19,7 +19,7 @@
 <br />
 
 <main class="container">
-	<h3>지역별 웹개발 구인 현황</h3>
+	<h3>게시판</h3>
 	<p>파일 업로드, 다운로드는 로컬에서만 가능</p>
 	<hr/>
 
@@ -32,10 +32,10 @@
 			<thead>
 				<tr>
 					<th class="col-md-1">번호</th>
-					<th class="col-md-2">회사명</th>
-					<th class="col-md-1">비고</th>
-					<th class="col-md-4">회사위치</th>
-					<th class="col-md-1">지원분야</th>
+					<th class="col-md-2">제목</th>
+					<th class="col-md-1">내용1</th>
+					<th class="col-md-4">내용2</th>
+					<th class="col-md-1">내용3</th>
 					<th class="col-md-1">작성일</th>
 					<th class="col-md-1">조회수</th>
 					<th class="col-md-1">첨부파일</th>

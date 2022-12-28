@@ -6,9 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.test.been.ComentBean;
 import com.test.been.CrawlingBean;
-import com.test.been.JobBeen;
 
 @Repository
 public class CrawlingDao {

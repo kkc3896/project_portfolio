@@ -3,7 +3,7 @@ package com.test.been;
 public class CrawlingBean {
 	private int c_index;
 	private String c_title; 
-	private String c_ranking; 
+	private int c_ranking; 
 	private String c_date ;
 	private String c_img;
 	
@@ -21,10 +21,10 @@ public class CrawlingBean {
 	public void setC_title(String c_title) {
 		this.c_title = c_title;
 	}
-	public String getC_ranking() {
+	public int getC_ranking() {
 		return c_ranking;
 	}
-	public void setC_ranking(String c_ranking) {
+	public void setC_ranking(int c_ranking) {
 		this.c_ranking = c_ranking;
 	}
 	public String getC_date() {

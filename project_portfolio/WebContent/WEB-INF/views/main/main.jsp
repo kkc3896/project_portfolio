@@ -9,11 +9,14 @@
 <main class="container">
 	<div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
 		<div class="col-md-6 px-0">
-			<h1 class="display-4 fst-italic">김권철 포트폴리오</h1>
+			<h1 class="display-4">김권철 포트폴리오</h1>
 			<p class="lead my-3">웹개발 파트 지원합니다</p>
+			<p class="lead my-0">코드는 하단 우측에 외부 자료 GitHub를 참고해 주세요.</p>
+			<!-- 
 			<p class="lead mb-0">
 				<a href="#" class="text-white fw-bold">이력서로 이동</a>
 			</p>
+			 -->
 		</div>
 	</div>
 
@@ -21,34 +24,35 @@
 		<div class="col-md-6">
 			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 				<div class="col p-4 d-flex flex-column position-static">
-					<strong class="d-inline-block mb-2 text-primary">공공데이터</strong>
-					<h3 class="mb-0">전라북도 일자리 창출 현황을 차트로 표현</h3>
-					<div class="mb-1 text-muted">10월 00일</div>
-					<p class="card-text mb-auto">공공데이터를 이용한 자바스크립트(예시-ajax)차트</p>
-					<a href="#" class="stretched-link">차트로 이동</a>
+					<strong class="d-inline-block mb-2 text-success">크롤링</strong>
+					<h3 class="mb-0">지니 실시간 차트 순위</h3>
+					<div class="mb-1 text-muted"></div>
+					<p class="mb-auto">java jsoup을 이용하여 음원사이트의 실시간차트 순위를 알아보자</p>
+					<c:url var="path" value="crawling_view" /> 
+					<a href="${path }" class="stretched-link">크롤링 페이지로 이동</a>
 				</div>
 				<div class="col-auto d-none d-lg-block">
 					<svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 						<title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" />
-						<text x="50%" y="50%" fill="#eceeef" dy=".3em">차트그림 캡쳐해서 올리기</text></svg>
-
+						<text x="50%" y="50%" fill="#eceeef" dy=".3em">개발 중입니다.</text>
+					</svg>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 				<div class="col p-4 d-flex flex-column position-static">
-					<strong class="d-inline-block mb-2 text-success">크롤링</strong>
-					<h3 class="mb-0">지역별 웹개발 구직내용</h3>
-					<div class="mb-1 text-muted">10월 00일</div>
-					<p class="mb-auto">java jsoup으로 HTML을 파싱하여 구직활동에 도움이 되어보자</p>
-					<a href="#" class="stretched-link">크롤링 페이지로 이동</a>
+					<strong class="d-inline-block mb-2 text-primary">공공데이터</strong>
+					<h3 class="mb-0">전라북도 일자리 창출 현황을 차트로 표현</h3>
+					<div class="mb-1 text-muted"></div>
+					<p class="card-text mb-auto">공공데이터를 이용한 자바스크립트차트</p>
+					<a href="#" class="stretched-link">차트로 이동</a>
 				</div>
 				<div class="col-auto d-none d-lg-block">
 					<svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 						<title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" />
-						<text x="50%" y="50%" fill="#eceeef" dy=".3em">참고한사이트 포토샵 모아서 </text></svg>
-
+						<text x="50%" y="50%" fill="#eceeef" dy=".3em">비어 있습니다.</text>
+					</svg>
 				</div>
 			</div>
 		</div>
@@ -58,20 +62,16 @@
 		<div class="col-md-8">
 
 			<article class="blog-post">
-				<h3>추가사항</h3>
-				<p>추가하고 싶은 기능 및 세부적인 것들 작성</p>
-				<p>무한 댓글 - 레이아웃은 메이플 어플과 같이 최신글이 위로 오고 아이디,내용,작성시간(형태는 정하기 작성시간을보이게할지 작성하고 몇분이 흘렀는지..) 참고</p>
-				<p>관리자페이지만들어서 회원 및 비회원이 작성한 글을 볼 수 있게 하자 이 페이지는 관리자만 보이게...</p>
-				<p>자바스크립트(공공데이터api) - 전라북도 일자리 현황 데이터 받아와서 차트로 보여주기 JSON+XML</p>
-				<p>자바_웹크롤링 - 내가 이력서 제출한 사이트, 북마크해둔 사이트를 크롤링할 수 있는지 확인해보고 안되면 아래의 허용가능한 한도에서 크롤링을 하자</p>
-				<p></p>
+				<h3>현재 진행사항</h3>
+				<li>웹크롤링 - 음원사이트의 실시간 차트 순위를 가져온다 현재 썸네일 이미지 불러오는 게 잘 안돼 진행중...</li>
+				<li>웹크롤링 - 순위를 1위부터 볼 수 있게 진행중...</li>
+                <br/><br/><br/>
+				<h3>추가 및 개선 사항</h3>
+				<li>게시판 파일 업로드 다운로드 기능이 로컬에서만 가능하니 개선 필요</li>
+				<li>이미지파일은 경로를 db에 저장하고 불러오게 하는식이니 바이너리 형태로 변환해서 업로드, 다운로드 구현하기</li> 
+				<li>공공데이터를 이용한 차트 그리기</li>
 			</article>
-			<!-- 페이지네이션 부분 나중에 변경해도됨 
-			<nav class="blog-pagination" aria-label="Pagination">
-				<a class="btn btn-outline-primary rounded-pill" href="#">이전</a> 
-				<a class="btn btn-outline-secondary rounded-pill disabled" href="#">다음</a>
-			</nav>
-			-->
+			
 			
 		</div>
 

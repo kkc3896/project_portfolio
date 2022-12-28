@@ -32,13 +32,24 @@
 			)	
 	</insert>
 	
-	<!-- 조회 -->
+	<!-- 조회 
 	<select id="Crawling_List" resultType="com.test.been.CrawlingBean">
 		select
 			c_index, c_title, c_ranking, c_date, c_img
 		from 
 			crawling
 		order by
-			c_index
+			c_index desc
 	</select>
+	-->
+	<!-- 조회 - 썸네일 링크주소에 //이 붙어있어 생략하기 위해 추가함 -->
+	<select id="Crawling_List" resultType="com.test.been.CrawlingBean">
+		SELECT 
+			c_index, c_title, c_ranking, c_date, (MID(c_img, 3, 200))
+		FROM 
+			crawling
+		ORDER BY
+			c_index DESC
+	</select>
+	
 </mapper>

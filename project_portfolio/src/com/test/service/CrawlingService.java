@@ -10,9 +10,7 @@ import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.test.been.ComentBean;
 import com.test.been.CrawlingBean;
-import com.test.been.JobBeen;
 import com.test.dao.CrawlingDao;
 
 @Service
@@ -41,14 +39,15 @@ public class CrawlingService {
 		for (Element element1 : element) {
 
 			String c_title = element1.select("a.title.ellipsis").text();	// 제목
-			String c_ranking = element1.select("td.number").text();			// 순위
-//			String c_img = element1.select("td.info img").attr("src");					// 이미지 링크주소
-			String c_img = element1.select("td a img").attr("src");					// 이미지 링크주소
+			String c_ranking = element1.select("td.number").text();			// 순위 text를 크롤링하기위해 String변수를 만들고
+			int c_ranking2 = Integer.parseInt(c_ranking);					// 숫자형으로 변환시켜 준다.
+			String c_img = element1.select("td a img").attr("src");			// 이미지 링크주소 
 
 //			System.out.print(element1.select("td.number").text() + "\t");	// 순위
 //			System.out.println(element1.select("a.title.ellipsis").text() + "\n"); // 제목
-
-			crawlingBean.setC_ranking(c_ranking);
+//			System.out.println(element1.select("td a img").attr("src") + "\n");
+			
+			crawlingBean.setC_ranking(c_ranking2);
 			crawlingBean.setC_title(c_title);
 			crawlingBean.setC_img(c_img);
 
@@ -59,6 +58,7 @@ public class CrawlingService {
 	
 	// 조회
 	public List<CrawlingBean> Crawling_List() throws Exception {
+		
 	    return crawlingDao.Crawling_List();
 	}
 

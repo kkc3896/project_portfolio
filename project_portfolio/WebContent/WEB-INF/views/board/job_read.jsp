@@ -28,20 +28,20 @@
 				readonly="readonly" />
 		</div>
 		<div class="form-group">
-			<label for="job_name">회사명</label> <input type="text"
+			<label for="job_name">제목</label> <input type="text"
 				class="form-control" name="job_name" value='${Job_Read.job_name }'
 				readonly="readonly">
 		</div>
 		<div class="form-group">
-			<label>내용</label> 
+			<label>내용1</label> 
 			<input type="text" class="form-control"	name="job_content" value='${Job_Read.job_content }'	readonly="readonly">
 		</div>
 		<div class="form-group">
-			<label>회사위치</label> 
+			<label>내용2</label> 
 			<input type="text" class="form-control" name="job_place" value='${Job_Read.job_place }' readonly="readonly">
 		</div>
 		<div class="form-group">
-			<label>지원분야</label> 
+			<label>내용3</label> 
 			<input type="text" class="form-control" name="job_field" value='${Job_Read.job_field }' readonly="readonly">
 		</div>
 		<div class="form-group">

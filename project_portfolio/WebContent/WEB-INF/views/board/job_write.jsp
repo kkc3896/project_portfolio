@@ -23,7 +23,7 @@
 			<input type="hidden" class="form-control" value='${job_idx }' />
 		</div>
 		<div class="form-group">
-			<label for="job_name">회사명</label>
+			<label for="job_name">제목</label>
 			<!-- 
 			<input type="text" class="form-control" name="job_name">  
 			 -->
@@ -31,15 +31,15 @@
 			<input type="text" class="form-control" name="job_name" title="한글,숫자,영문자를 이용한 완성된 문자로 입력해주세요. 공백은 입력이 불가능합니다." pattern="^[가-힣a-zA-Z0-9]*$" required="required"/>  
 		</div>
 		<div class="form-group">
-			<label for="job_content">내용</label>
+			<label for="job_content">내용1</label>
 			<input type="text" class="form-control" name="job_content">
 		</div>
 		<div class="form-group">
-			<label for="job_place">회사위치</label>
+			<label for="job_place">내용2</label>
 			<input type="text" class="form-control" name="job_place">
 		</div>
 		<div class="form-group">
-			<label for="job_field">지원분야</label>
+			<label for="job_field">내용3</label>
 			<input type="text" class="form-control" name="job_field">
 		</div>
 		<div class="form-group">

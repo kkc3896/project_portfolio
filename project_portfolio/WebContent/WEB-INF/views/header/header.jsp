@@ -130,17 +130,19 @@
 						<c:url var="path" value="Job_List" /> 
 						<a href="${path }" class="nav-link px-2 text-white">게시판</a>
 					</li>
+					<%--
 					<li>
 						<c:url var="path" value="chart" /> 
 						<a href="${path }" class="nav-link px-2 text-white">공공api</a>
 					</li>
+					 --%>
 					<li>
 						<c:url var="path" value="Crawling_Write"/>
 						<form method="post" action="${path}">
 							<input type="hidden" value="c_index">						
 						
 						<c:url var="path" value="crawling_view" /> 
-						<a href="${path }" class="nav-link px-2 text-white">크롤링_미구현</a>
+						<a href="${path }" class="nav-link px-2 text-white">크롤링_구현중</a>
 						</form>
 					</li>
 					<li>
