@@ -42,21 +42,20 @@
 				<!-- 크롤링 form -->
 				<c:url var="path" value="Crawling_Write"/>
 				<form action="${path }" method="post">
-					<button type="submit" class="btn btn-outline-dark me-2">지니 실시간 차트 순위 가져오기</button>
-					<strong>버튼을 누르면 실시간 차트 순위를 가져와 보여줌. 현재 썸네일도 크롤링으로 보여주기위한 작업중입니다.</strong>
+					<button type="submit" class="btn btn-outline-dark me-2">크롤링 시작</button>
 				</form>
 				<hr/>
 				<strong>지니 실시간 차트 순위 1 ~ 10</strong>
+				<div>가져온 날짜 : ${crawling.c_date }</div>
 				<hr/>
 				<c:forEach items="${crawling_List}" var="crawlingList" begin="0" step="1" end="9">
 						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 							<div class="col" style="width:auto; heigth:auto;">
-								<img src="" alt="썸네일 이미지" style="width:auto; heigth:auto; background-color: yellow; float:left;"/>
-								<div style="float:left; margin-left:10px;">${crawlingList.c_ranking}</div>
-								<div style="float:left; margin-left:15px;">${crawlingList.c_title}</div>
-								<br/>
-								<hr/>
+								<img src="${crawlingList.c_img}" alt="썸네일 이미지" style="width:70px; heigth:70px; float:left;"/>
+								<div style="float:left; margin-left:10px; margin-top:23px;">${crawlingList.c_ranking}</div>
+								<div style="float:left; margin-left:15px; margin-top:23px;">${crawlingList.c_title}</div>
 							</div>
+							<br/>
 						</div>
 				</c:forEach>
 			</div>

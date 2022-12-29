@@ -43,13 +43,15 @@
 	</select>
 	-->
 	<!-- 조회 - 썸네일 링크주소에 //이 붙어있어 생략하기 위해 추가함 -->
+	<!-- (MID(c_img, 3, 200)) -->
 	<select id="Crawling_List" resultType="com.test.been.CrawlingBean">
 		SELECT 
-			c_index, c_title, c_ranking, c_date, (MID(c_img, 3, 200))
+			c_index, c_title, c_ranking, c_date, c_img
 		FROM 
 			crawling
 		ORDER BY
-			c_index DESC
+			c_date DESC, c_ranking ASC  		<!-- 1위 순서부터 보인다 -->
+		LIMIT 10
 	</select>
 	
 </mapper>

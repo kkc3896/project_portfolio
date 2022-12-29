@@ -49,7 +49,7 @@ public class CrawlingService {
 			
 			crawlingBean.setC_ranking(c_ranking2);
 			crawlingBean.setC_title(c_title);
-			crawlingBean.setC_img(c_img);
+			crawlingBean.setC_img("https:" + c_img);		
 
 			crawlingDao.Crawling_Write(crawlingBean);
 		}
