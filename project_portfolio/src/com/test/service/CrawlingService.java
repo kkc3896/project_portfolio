@@ -26,7 +26,6 @@ public class CrawlingService {
 		// JSOUP 라이브러리를 통해 사이트 접속되면, 그 사이트 전체 HTML 소스 저장할 변수
 		Document doc = null;
 
-		// 사이트 접속 (http 프로토콜만 가능, https 프로토콜은 보안상 안 된다.)
 		try {
 			// Document에는 페이지의 전체 소스가 저장된다
 			doc = Jsoup.connect(url).get();

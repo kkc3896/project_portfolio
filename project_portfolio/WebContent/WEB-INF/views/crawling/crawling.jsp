@@ -44,9 +44,10 @@
 				<form action="${path }" method="post">
 					<button type="submit" class="btn btn-outline-dark me-2">크롤링 시작</button>
 				</form>
+				<br/>
+				<a href="https://www.genie.co.kr/">비교를 위해 지니 사이트 링크</a>
 				<hr/>
 				<strong>지니 실시간 차트 순위 1 ~ 10</strong>
-				<div>가져온 날짜 : ${crawling.c_date }</div>
 				<hr/>
 				<c:forEach items="${crawling_List}" var="crawlingList" begin="0" step="1" end="9">
 						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">

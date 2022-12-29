@@ -138,7 +138,7 @@
 					 --%>
 					<li>
 						<c:url var="path" value="crawling_view" /> 
-						<a href="${path }" class="nav-link px-2 text-white">크롤링_구현중</a>
+						<a href="${path }" class="nav-link px-2 text-white">크롤링</a>
 					</li>
 					<li>
 						<c:url var="path" value="ComentList"/>
